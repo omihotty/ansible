@@ -47,7 +47,7 @@ pipeline{
 
 	post{
 		always{
-			echo "job is done"
+			emailext attachLog: true, body: '${DEFAULT_CONTENT}', compressLog: true, subject: '${DEFAULT_SUBJECT}', to: 'omkar.saini@esteltelecom.com'
 	   
 		}
 		success{
@@ -60,7 +60,7 @@ pipeline{
 			emailext attachLog: true, body: '${DEFAULT_CONTENT}', compressLog: true, subject: '${DEFAULT_SUBJECT}', to: 'omkar.saini@esteltelecom.com'
 		}
 		changed{
-			echo '${DEFAULT_CONTENT}'
+			emailext attachLog: true, body: '${DEFAULT_CONTENT}', compressLog: true, subject: '${DEFAULT_SUBJECT}', to: 'omkar.saini@esteltelecom.com'
 		}
 		          
 	
